@@ -9,5 +9,6 @@ create table mosaic.docs_oct73 (
     body                text        not null,
     pg_cnt              integer,
     word_cnt            integer     /* not null */,
+    char_cnt            integer     not null,
     fts                 tsvector    /* not null */
 );
