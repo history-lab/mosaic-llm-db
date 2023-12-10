@@ -27,4 +27,4 @@ select g.id::id_d doc_id, 'usddo' corpus, lower(g.classification) classification
 
 create role mosaic_team_member;
 grant usage on schema mosaic to mosaic_team_member;
-grant select on mosaic.docs to mosaic_team_member
+grant select on mosaic.docs to mosaic_team_member;
