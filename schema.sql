@@ -14,10 +14,6 @@ select d.doc_id, d.corpus::text, d.classification::text, d.authored, d.title,
           d.body != 'No Text Body Available for Document' and
           d.body not like 'MRN: %TEXT FOR THIS MRN IS UNAVAILABLE%'
 union all
-select c.doc_id::id_d, 'cia' corpus, c.classification, c.authored, c.title,
-       c.body, NULL::tsvector full_text, pdf doc_url, NULL::id_d frus_volume_id
-    from declassification_cia.docs_view c
-union all
 select g.id::id_d doc_id, 'usddo' corpus, lower(g.classification) classification,
        g.date authored, g.title, g.body, NULL::tsvector full_text,
        'http://history-lab.org/documents/' || g.id doc_url, 
