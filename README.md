@@ -1,2 +1,2 @@
 # mosaic-llm-db
-Describes access to History Lab data for the Mosaic LLM project
+Database scripts in support of the Mosaic LLM project.
