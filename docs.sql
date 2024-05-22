@@ -6,14 +6,14 @@ as
 select d.doc_id, d.corpus::text, d.classification::text, d.authored, d.title, 
        d.body, d.full_text, 
        coalesce(d.source, 'http://history-lab.org/documents/' || d.doc_id) doc_url
-    from foiarchive.docs d 
+    from foiarchive.docs d
+    where d.body is not null and d.body <> ''
 union all
 select g.id::foiarchive.id_d doc_id, 'usddo' corpus, lower(g.classification) classification,
        g.date authored, g.title, g.body, NULL::tsvector full_text,
        'http://history-lab.org/documents/' || g.id doc_url
    from declassification_ddrs.docs g;
 
-
-create role mosaic_team_member;
+-- create role mosaic_team_member;
 grant usage on schema mosaic to mosaic_team_member;
 grant select on mosaic.docs to mosaic_team_member;
