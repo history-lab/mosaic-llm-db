@@ -1,2 +1,2 @@
 # mosaic-llm-db
-Database scripts in support of the Mosaic LLM project.
+Database views and scripts in support of the Mosaic LLM project.
